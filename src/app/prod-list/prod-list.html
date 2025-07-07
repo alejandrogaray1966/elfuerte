@@ -16,7 +16,7 @@
             <td><img width="100" src="{{product.image}}" alt="Foto ilustrativa"></td>
             <td>{{product.name}}</td>
             <td>{{product.type}}</td>
-            <td>{{product.price}}</td>
+            <td>{{ product.price | currency }}</td>
             <td>{{product.stock}}</td>
         </tr>
         <tr>

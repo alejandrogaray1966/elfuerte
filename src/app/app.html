@@ -48,7 +48,7 @@
       <app-prod-list></app-prod-list>
     </div>
     <div class="col-4">
-      Carrito de Compras
+      <app-carri-list></app-carri-list>
     </div>
   </div>
 </div>
@@ -56,6 +56,8 @@
 
 <footer>
   <h6>
-    - TANDIL - {{title}} - Copyright 2025 -
+    - {{ today | date:'longDate' }}
+    - TANDIL - {{title}} - © Copyright 2025 -
   </h6>
+  <p>© P-MAS developer</p>
 </footer>

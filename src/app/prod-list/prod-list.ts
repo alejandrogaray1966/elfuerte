@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-prod-list',
-  imports: [],
+  imports: [CurrencyPipe],
   templateUrl: './prod-list.html',
   styleUrl: './prod-list.scss'
 })
@@ -15,5 +16,4 @@ export class ProdList {
             "stock":7,
             "image":"assets/img/redpoint.jpeg",
   }
-
 }
