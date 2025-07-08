@@ -1,7 +1,7 @@
 <h3>
     Lista de Productos
 </h3>
-<table class="table">
+<table class="table align-middle">
     <thead>
         <tr>
             <th>Imagen</th>
@@ -12,40 +12,28 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img width="100" src="{{product.image}}" alt="Foto ilustrativa"></td>
-            <td>{{product.name}}</td>
-            <td>{{product.type}}</td>
-            <td>{{ product.price | currency }}</td>
-            <td>{{product.stock}}</td>
-        </tr>
-        <tr>
-            <td><img width="100" src="assets/img/master.jpeg" alt="Foto ilustrativa"></td>
-            <td>Master</td>
-            <td>Cigarrillo</td>
-            <td>2.600</td>
-            <td>9</td>
-        </tr>
-        <tr>
-            <td><img width="100" src="assets/img/kiel.jpeg" alt="Foto ilustrativa"></td>
-            <td>Kiel</td>
-            <td>Cigarrillo</td>
-            <td>2.800</td>
-            <td>11</td>
-        </tr>
-        <tr>
-            <td><img width="100" src="assets/img/dolchester.jpeg" alt="Foto ilustrativa"></td>
-            <td>Dolchester</td>
-            <td>Cigarrillo</td>
-            <td>3.000</td>
-            <td>13</td>
-        </tr>
-                <tr>
-            <td><img width="100" src="assets/img/kool.jpeg" alt="Foto ilustrativa"></td>
-            <td>Kool</td>
-            <td>Cigarrillo</td>
-            <td>3.200</td>
-            <td>15</td>
-        </tr>
+        @for (product of products; track product.name) {
+            <tr [ngClass]="{'clearance':product.offer}">
+                <td><img class="product-img" src="{{product.image}}" alt="Foto ilustrativa"></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.type | uppercase }}</td>
+                <td>{{ product.price | currency }}</td>
+                @if ( product.stock > 0) {
+                    <td>{{ product.stock }}</td>
+                }
+                @else {
+                    <td>
+                        <span class="badge text-bg-warning">Sin Stock</span>
+                    </td>
+                }
+            </tr>
+        }
+        @empty {
+            <tr>
+                <td>
+                    <span class="badge text-bg-danger">No hay Productos para mostrar...</span>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
