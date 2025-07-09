@@ -11,6 +11,7 @@ import { Product } from './Product';
 })
 
 export class ProdList {
+
   products: Product[] = [
     {
       name: 'Red Point',
@@ -19,6 +20,7 @@ export class ProdList {
       stock: 13,
       image:'assets/img/redpoint.jpeg',
       offer: false,
+      quantity: 0,
     },
     {
       name: 'Master',
@@ -27,22 +29,25 @@ export class ProdList {
       stock: 0,
       image: 'assets/img/master.jpeg',
       offer: false,
+      quantity: 0,
     },
     {
       name: 'Kiel',
       type: 'Cigarrillo',
-      price: 2800,
-      stock: 11,
+      price: 1300,
+      stock: 5,
       image: 'assets/img/kiel.jpeg',
       offer: true,
+      quantity: 0,
     },
     {
       name: 'Dolchester',
       type: 'Cigarrillo',
       price: 3000,
-      stock: 13,
+      stock: 22,
       image: 'assets/img/dolchester.jpeg',
       offer: false,
+      quantity: 0,
     },
     {
       name: 'Kool',
@@ -51,6 +56,18 @@ export class ProdList {
       stock: 0,
       image: 'assets/img/kool.jpeg',
       offer: false,
+      quantity: 0,
     },
   ]
+
+  decreaseQuantity(product:Product):void {
+    if (product.quantity > 0)
+      product.quantity -- ;
+  }
+
+  increaseQuantity(product:Product):void {
+    if (product.quantity < product.stock )
+      product.quantity ++ ;
+  }
+
 }

@@ -9,6 +9,7 @@
             <th>Tipo</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Cantidad</th>
         </tr>
     </thead>
     <tbody>
@@ -20,6 +21,11 @@
                 <td>{{ product.price | currency }}</td>
                 @if ( product.stock > 0) {
                     <td>{{ product.stock }}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success btn-sm" (click)="decreaseQuantity(product)">-</button>
+                        {{ product.quantity }}
+                        <button type="button" class="btn btn-outline-success btn-sm" (click)="increaseQuantity(product)">+</button>
+                    </td>
                 }
                 @else {
                     <td>
