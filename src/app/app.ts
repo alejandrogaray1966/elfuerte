@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ProdList } from "./prod-list/prod-list";
-import { CarriList } from "./carri-list/carri-list";
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  /* standalone: true, */
-  /* imports: [RouterOutlet, DatePipe , ProdList, CarriList], */
-  imports: [ DatePipe , ProdList, CarriList],
+  imports: [RouterModule, RouterOutlet, DatePipe],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
