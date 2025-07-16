@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { Tobuy } from './tobuy/tobuy';
+import { Page404 } from './page404/page404';
 
 export const routes: Routes = [
     {
@@ -20,9 +21,8 @@ export const routes: Routes = [
         path: 'tobuy',
         component: Tobuy,
     },
-    // { path: '**', component: NotFound },
-    // para crear un set default
-    // crear el componente not found
-    // importarlo
-    // y luego poner este path
+    {
+        path: '**',
+        component: Page404,
+    },
 ];
