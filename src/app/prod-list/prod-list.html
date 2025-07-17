@@ -22,9 +22,11 @@
                 @if ( product.stock > 0) {
                     <td>{{ product.stock }}</td>
                     <td>
-                        <button type="button" class="btn btn-outline-success btn-sm" (click)="decreaseQuantity(product)">-</button>
-                        {{ product.quantity }}
-                        <button type="button" class="btn btn-outline-success btn-sm" (click)="increaseQuantity(product)">+</button>
+                        <app-input-integer 
+                            [(quantity)]="product.quantity" 
+                            [max]="product.stock"
+                            (maxReached)="maxReached($event)"
+                        ></app-input-integer>
                     </td>
                 }
                 @else {

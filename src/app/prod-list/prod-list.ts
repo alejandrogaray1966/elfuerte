@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 import { Product } from './Product';
+import { InputInteger } from "../input-integer/input-integer";
 
 @Component({
   selector: 'app-prod-list',
-  imports: [CommonModule, CurrencyPipe, UpperCasePipe],
+  imports: [CommonModule, CurrencyPipe, UpperCasePipe, InputInteger],
   templateUrl: './prod-list.html',
   styleUrl: './prod-list.scss'
 })
@@ -60,14 +61,8 @@ export class ProdList {
     },
   ]
 
-  decreaseQuantity(product:Product):void {
-    if (product.quantity > 0)
-      product.quantity -- ;
-  }
-
-  increaseQuantity(product:Product):void {
-    if (product.quantity < product.stock )
-      product.quantity ++ ;
+  maxReached(mensaje: string): void {
+      alert(mensaje);
   }
 
 }
