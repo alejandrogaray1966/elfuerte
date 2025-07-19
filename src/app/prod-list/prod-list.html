@@ -14,7 +14,7 @@
         </tr>
     </thead>
     <tbody>
-        @for (product of products; track product.name) {
+        @for (product of filteredProducts; track product.name) {
             <tr [ngClass]="{'clearance':product.offer}">
                 <td><img class="product-img" src="{{product.image}}" alt="Foto ilustrativa"></td>
                 <td>{{ product.name }}</td>

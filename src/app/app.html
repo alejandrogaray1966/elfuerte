@@ -19,10 +19,10 @@
                 Products
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cigarrillos</a></li>
-                <li><a class="dropdown-item" href="#">Tabacos</a></li>
-                <li><a class="dropdown-item" href="#">Papeles</a></li>
-                <li><a class="dropdown-item" href="#">Filtros</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/tobuy']" [queryParams]="{ type: 'Cigarrillo' }">Cigarrillos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/tobuy']" [queryParams]="{ type: 'Tabaco' }">Tabacos</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/tobuy']" [queryParams]="{ type: 'Papel' }">Papeles</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/tobuy']" [queryParams]="{ type: 'Filtro' }">Filtros</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" [routerLink]="['/tobuy']">Todos los Productos</a></li>
               </ul>

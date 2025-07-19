@@ -1,10 +1,8 @@
 <div class="row">
     <div class="col-8">
-      <!--<app-prod-list></app-prod-list>-->
-      <app-prod-list #prodListRef></app-prod-list>
+      <app-prod-list [filterType]="selectedType" #prodListRef></app-prod-list>
     </div>
     <div class="col-4">
-      <!--<app-carri-list></app-carri-list>-->
       <app-carri-list (productRemoved)="handleProductRemoved($event)"></app-carri-list>
     </div>
 </div>
