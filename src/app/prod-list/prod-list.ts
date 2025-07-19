@@ -118,7 +118,8 @@ export class ProdList {
 
   constructor(private ProdCarri: ProdCarri){}
 
-  @Input() filterType: string | null = null;
+  @Input() 
+    filterType: string | null = null;
 
   get filteredProducts(): Product[] {
     if (!this.filterType) {

@@ -4,7 +4,6 @@ import { CarriList } from "../carri-list/carri-list";
 import { Product } from '../prod-list/Product';
 import { ActivatedRoute } from '@angular/router';
 
-
 @Component({
   selector: 'app-tobuy',
   imports: [ProdList, CarriList],
