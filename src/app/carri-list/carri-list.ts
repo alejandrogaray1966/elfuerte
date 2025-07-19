@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProdCarri } from '../prod-carri';
 
 @Component({
   selector: 'app-carri-list',
@@ -8,5 +9,8 @@ import { Component } from '@angular/core';
 })
 
 export class CarriList {
+
+  constructor(private ProdCarri: ProdCarri) {
+  }
 
 }

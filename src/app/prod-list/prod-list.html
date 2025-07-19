@@ -10,6 +10,7 @@
             <th>Precio</th>
             <th>Stock</th>
             <th>Cantidad</th>
+            <th>Agregar</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,9 @@
                             [max]="product.stock"
                             (maxReached)="maxReached($event)"
                         ></app-input-integer>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" (click)="addProduct(product)">Agregar</button>
                     </td>
                 }
                 @else {

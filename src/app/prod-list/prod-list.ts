@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CurrencyPipe, UpperCasePipe } from '@angular/common';
 import { Product } from './Product';
 import { InputInteger } from "../input-integer/input-integer";
+import { ProdCarri } from '../prod-carri';
 
 @Component({
   selector: 'app-prod-list',
@@ -61,8 +62,15 @@ export class ProdList {
     },
   ]
 
+  constructor(private ProdCarri: ProdCarri){
+  }
+
   maxReached(mensaje: string): void {
       alert(mensaje);
   }
 
+  addProduct(newProduct: Product) {
+    this.ProdCarri.addListProduct(newProduct);
+  }
+  
 }
