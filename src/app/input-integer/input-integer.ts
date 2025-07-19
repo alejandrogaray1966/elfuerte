@@ -27,7 +27,6 @@ export class InputInteger {
         this.quantity -- ;
         this.quantityChange.emit(this.quantity);
       }
-        
   }
 
   increaseQuantity():void {

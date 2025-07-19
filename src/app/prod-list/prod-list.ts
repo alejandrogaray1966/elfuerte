@@ -62,15 +62,27 @@ export class ProdList {
     },
   ]
 
-  constructor(private ProdCarri: ProdCarri){
-  }
+  constructor(private ProdCarri: ProdCarri){}
 
   maxReached(mensaje: string): void {
       alert(mensaje);
   }
 
-  addProduct(newProduct: Product) {
-    this.ProdCarri.addListProduct(newProduct);
+  addProduct(newProduct: Product): void {
+    if (newProduct.quantity > 0) {
+      this.ProdCarri.addListProduct({...newProduct});
+      newProduct.stock -= newProduct.quantity;
+      newProduct.quantity = 0;
+    } else {
+      alert("Debés seleccionar al menos una unidad...");
+    }
   }
   
+  restoreStock(product: Product): void {
+    const prodInCatalog = this.products.find(p => p.name === product.name);
+    if (prodInCatalog) {
+      prodInCatalog.stock += product.quantity;
+    }
+  }
+
 }

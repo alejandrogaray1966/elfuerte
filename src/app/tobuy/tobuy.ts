@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ProdList } from "../prod-list/prod-list";
 import { CarriList } from "../carri-list/carri-list";
+import { Product } from '../prod-list/Product';
 
 
 @Component({
@@ -12,4 +13,10 @@ import { CarriList } from "../carri-list/carri-list";
 
 export class Tobuy {
 
+  @ViewChild('prodListRef') prodListComponent!: ProdList;
+
+  handleProductRemoved(product: Product): void {
+    this.prodListComponent.restoreStock(product);
+  }
+  
 }

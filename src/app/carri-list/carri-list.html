@@ -1,3 +1,18 @@
-<h3>
-    Carrito de Compras
-</h3>
+<h3>Carrito de Compras</h3>
+
+<ul *ngIf="(listProduct$ | async) as products">
+  <li *ngFor="let product of products" class="d-flex justify-content-between align-items-center">
+    <span>
+      {{ product.quantity }} x {{ product.name }} (${{ product.price | number:'1.2-2' }}) =
+      <strong>${{ product.quantity * product.price | number:'1.2-2' }}</strong>
+    </span>
+    <button class="btn btn-danger btn-sm ms-3" (click)="removeProduct(product)">Borrar</button>
+  </li>
+</ul>
+
+<hr>
+
+<!-- Total general -->
+<div *ngIf="(listProduct$ | async) as products">
+  <h4>Total: ${{ getTotal(products) | number:'1.2-2' }}</h4>
+</div>

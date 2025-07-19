@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product } from './prod-list/Product';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,17 +8,30 @@ import { Product } from './prod-list/Product';
 
 export class ProdCarri {
 
-  listProduct: Product[] = []
+  private _listProduct$ = new BehaviorSubject<Product[]>([]);
+  public listProduct = this._listProduct$.asObservable();
 
-  constructor() { }
+  constructor() {}
 
-  addListProduct(producNew: Product) {
-    let productFound: Product | undefined = this.listProduct.find((valor) => valor.name == producNew.name);
-    if (!productFound) {
-      this.listProduct.push(producNew);
+  addListProduct(producNew: Product): void {
+    const current = this._listProduct$.getValue();
+    const existing = current.find(p => p.name === producNew.name);
+    let updatedList: Product[];
+    if (existing) {
+      updatedList = current.map(p =>
+        p.name === producNew.name
+          ? { ...p, quantity: p.quantity + producNew.quantity }
+          : p
+      );
     } else {
-      productFound.quantity += producNew.quantity;
+      updatedList = [...current, producNew];
     }
+    this._listProduct$.next(updatedList);
   }
 
+  removeProduct(productSupr: Product): void {
+    const current = this._listProduct$.getValue();
+    const updated = current.filter(p => p.name !== productSupr.name);
+    this._listProduct$.next(updated);
+  }
 }
