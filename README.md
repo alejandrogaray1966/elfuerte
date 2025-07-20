@@ -1,5 +1,22 @@
 # Elfuerte
 
+Trabajo Práctico Especial  
+Franco Stramana - Profesor responsable - Ing. en Sistemas  
+Agustín Groh - Profesional invitado - Tec. en Desarrollo de Aplicaciones Informáticas  
+
+## Alumno
+
+* Nombre y Apellido: Alejandro Oscar Garay
+* DNI: 18.038.228
+* Email: <alejandrogaray1966@gmail.com>
+* Sede: Tandil
+
+## Tema
+
+El sitio contendrá una página principal, para información de la empresa, otra página acerca de los desarrolladores, y un pequeño menú donde se podrá elegir los productos según su rubro, una vez seleccionado el rubro, se desplegará en pantalla una lista con los productos disponibles para su compra, se podrá asignar la cantidad a comprar de un producto determinado, los productos elegidos se irán acumulando en un carrito de compra, la página del carrito mostrará todos los productos seleccionados, el importe total y dispondrá de una opción para borrar algún producto, en el caso de que se haya cometido algún error al seleccionarlo.
+
+## Framework
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
 
 ## Development server
